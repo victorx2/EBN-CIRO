@@ -1,0 +1,183 @@
+<?php
+    session_start();
+
+    include "Vista/parte.superior.php";
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/Retro.png">
+    <title>GRAFICOS</title>
+
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900" rel="stylesheet">
+
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+
+    <div id="wrapper">
+
+
+        
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            
+            <div id="content">
+
+                <div class="container-fluid">
+
+
+                    <h1 class="h3 mb-2 text-gray-800"><img src="img/gra.png" width="90" height="90">Estadisticas</h1>
+                    <p class="mb-4">Esta seccion muestra en Estadisticas los datos o informacion de la institucion. <br> <hr></p>
+
+                    <div class="col-xl col-lg card shadow">
+                                        
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Seccion de Estados</h6>
+                            Muestra los alumnos y docentes activos e inactivos.
+                        </div>
+
+                        <div class="row card-body">
+                            <div class="col-sm-12">
+                                <div class="form-group row">
+
+                                    <div class="col mr-2">
+                                      <canvas id="activo"></canvas>
+                                    </div>
+
+                                    <div class="col ml-2">
+                                        <canvas id="profesor"></canvas>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <br>
+
+                    <div class="col-xl col-lg card shadow">
+                                         
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Seccion de Alumnos</h6>
+                            Tiene las estadisticas de las Edad y Genero de los Alumnos.
+                        </div>
+
+                        <div class="row card-body">
+                            <div class="col-sm-12">
+                                <div class="form-group row">
+
+                                    <div class="col mr-2">
+                                        <canvas id="genero"></canvas>
+                                    </div>
+
+                                    <div class="col ml-2">
+                                        <canvas id="edad"></canvas>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+
+                    
+                    <br>
+
+                    <div class="col-xl col-lg card shadow">
+                                    
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Informacion General</h6>
+                            Tiene las estadisticas de la Matricula Actual y Calificaciones de los Estudiantes.
+                        </div>
+
+                        <div class="row card-body">
+                            <div class="col-sm-12">
+                                <div class="form-group row">
+
+                                    <div class="col mr-2">
+                                        <canvas id="grado"></canvas>
+                                    </div>
+
+                                    <div class="col ml-2">
+                                        <canvas id="reprobado"></canvas>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>   
+
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; aplicacion web de la institucion E.B.N. Bolivariana Ciro Maldonado Zerpa</span>
+                    </div>
+                </div>
+            </footer>
+       
+
+        </div>
+      
+
+    </div>
+  
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+ 
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.js"></script>
+    <script src="estadisticas/profesor.estado.js"></script>
+    <script src="estadisticas/alumno.estado.js"></script>
+    <script src="estadisticas/alumno.genero.js"></script>
+    <script src="estadisticas/alumno.edad.js"></script>
+    <script src="estadisticas/alumno.grado.js"></script>
+    <script src="estadisticas/inscribir.js"></script>
+    <script src="estadisticas/reprobado.alumno.js"></script>
+
+    <!-- C:\xampp\htdocs\E.B.N BOLIVARIANA CIRO 2023\estadisticas\reprobado.alumno.js -->
+
+</body>
+
+</html>
